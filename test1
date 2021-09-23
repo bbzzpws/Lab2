@@ -14,7 +14,4 @@ for line in lines:
     for key_word_lines in key_word_line:
         if key_word_lines in key_words:
             total_num+=1
-    if 'switch' in key_word_line:
-        switch_num+=1
 print("total num:",total_num)
-print("switch num:",switch_num)
