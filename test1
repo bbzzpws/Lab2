@@ -1,6 +1,16 @@
-def keywords_num():
-    key_words=['auto','break','case','char','const','continue','default','do',
-               'double','else','enum','extern','float','for','goto','if',
-               'int','long','register','return','short','signed','sizeof','static',
-               'struct','switch','typedef','union','unsigned','void','volatile','while']
-    key_word=0
+key_words=['auto','break','case','char','const','continue','default','do',
+           'double','else','enum','extern','float','for','goto','if',
+           'int','long','register','return','short','signed','sizeof','static',
+           'struct','switch','typedef','union','unsigned','void','volatile','while']
+key_word=0
+text=open(r"C:\Users\ywlmt\Desktop\编程\pycharm\test.txt", "r", encoding='utf-8')
+lines=text.readlines()
+string=['(',')','{',',','}',':','<','=','>',';']
+for line in lines:
+    for str in string:
+        line=line.replace(str,' ')
+    key_word_line=line.split()
+    for key_word_lines in key_word_line:
+        if key_word_lines in key_words:
+            key_word+=1
+print("total num:",key_word)
