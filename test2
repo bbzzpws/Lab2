@@ -4,7 +4,9 @@ key_words=['auto','break','case','char','const','continue','default','do',
            'struct','switch','typedef','union','unsigned','void','volatile','while']
 total_num=0
 switch_num=0
-text=open(r"C:\Users\ywlmt\Desktop\coding\pycharm\test.txt", "r", encoding='utf-8')
+switch_index=0
+case_num=[]
+text=open(r"C:\Users\ywlmt\Desktop\编程\pycharm\test.txt", "r", encoding='utf-8')
 lines=text.readlines()
 string=['(',')','{',',','}',':','<','=','>',';']
 for line in lines:
@@ -14,7 +16,16 @@ for line in lines:
     for key_word_lines in key_word_line:
         if key_word_lines in key_words:
             total_num+=1
-    if 'switch' in key_word_line:
-        switch_num+=1
+        if key_word_lines=='switch':
+            switch_num+= 1
+            case_num.append(0)
+            switch_index+=1
+        elif key_word_lines=='case':
+            case_num[switch_index-1]+=1
+        else:
+            continue
 print("total num:",total_num)
 print("switch num:",switch_num)
+print("case num:",end='')
+for i in range(len(case_num)):
+    print("{}".format(case_num[i]),end=' ')
