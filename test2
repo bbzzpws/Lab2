@@ -6,7 +6,7 @@ total_num=0
 switch_num=0
 switch_index=0
 case_num=[]
-text=open(r"C:\Users\ywlmt\Desktop\编程\pycharm\test.txt", "r", encoding='utf-8')
+text=open(r"C:\Users\ywlmt\Desktop\coding\pycharm\test.txt", "r", encoding='utf-8')
 lines=text.readlines()
 string=['(',')','{',',','}',':','<','=','>',';']
 for line in lines:
