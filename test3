@@ -10,7 +10,7 @@ ifelse=[]
 list_if=[]
 if_else=0
 if_else_if_else=0
-text=open(r"C:\Users\ywlmt\Desktop\编程\pycharm\test.txt", "r", encoding='utf-8')
+text=open(r"C:\Users\ywlmt\Desktop\coding\pycharm\test.txt", "r", encoding='utf-8')
 lines=text.readlines()
 string=['(',')','{',',','}',':','<','=','>',';']
 for line in lines:
