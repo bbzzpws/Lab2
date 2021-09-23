@@ -1,0 +1,20 @@
+key_words=['auto','break','case','char','const','continue','default','do',
+           'double','else','enum','extern','float','for','goto','if',
+           'int','long','register','return','short','signed','sizeof','static',
+           'struct','switch','typedef','union','unsigned','void','volatile','while']
+total_num=0
+switch_num=0
+text=open(r"C:\Users\ywlmt\Desktop\coding\pycharm\test.txt", "r", encoding='utf-8')
+lines=text.readlines()
+string=['(',')','{',',','}',':','<','=','>',';']
+for line in lines:
+    for str in string:
+        line=line.replace(str,' ')
+    key_word_line=line.split()
+    for key_word_lines in key_word_line:
+        if key_word_lines in key_words:
+            total_num+=1
+    if 'switch' in key_word_line:
+        switch_num+=1
+print("total num:",total_num)
+print("switch num:",switch_num)
